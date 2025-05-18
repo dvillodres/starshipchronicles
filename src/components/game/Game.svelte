@@ -14,6 +14,7 @@
     import VictoryScreen from "./VictoryScreen.svelte";
     import GameHeader from "./GameHeader.svelte";
     import CurrentMission from "./CurrentMission.svelte";
+    import {SignedOut, SignIn, SignInButton} from "@clerk/astro/components";
 
     let state;
     export let isDemo = false;
@@ -117,9 +118,11 @@
                         Has realizado los 2 viajes disponibles en esta versión de prueba.<br>
                         Inicia sesión para continuar tu aventura intergaláctica.
                     </p>
-                    <a href="/login" class="inline-block bg-crt-green text-black font-bold px-5 py-2 hover:bg-white transition">
-                        🚀 Iniciar sesión
-                    </a>
+                    <SignedOut>
+                        <SignInButton mode="modal" class="inline-block bg-crt-green text-black font-bold px-5 py-2 hover:bg-white transition">
+                            🚀 Inicia Sesión
+                        </SignInButton>
+                    </SignedOut>
                 </div>
             </div>
         {/if}
