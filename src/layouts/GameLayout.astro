@@ -1,0 +1,35 @@
+---
+import './src/styles/global.css'
+import {UserButton} from "@clerk/astro/components";
+---
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Starship Chronicles | Embark on an Interstellar Odyssey</title>
+	</head>
+
+	<body class="bg-nebula-black text-white dark overflow-x-hidden relative">
+
+	<div class="fixed top-0 left-0 z-50 font-doto p-2 w-full flex justify-between items-center bg-emerald-950">
+		<div class="flex gap-2 items-center">
+			<img class="w-8 h-8" src="/assets/img/logo.webp">
+			<p>Starship Chronicle</p>
+		</div>
+		<UserButton />
+	</div>
+		<div class="starfield absolute font-retro inset-0 z-0">
+			<div class=" absolute inset-0 z-0">
+				<video class="object-cover object-center w-full h-full opacity-60 blur-xs" autoplay muted loop>
+					<source src="assets/videos/starfield.mp4" type="video/mp4">
+					Tu navegador no soporta el video.
+				</video>
+			</div>
+		</div>
+
+		<div class="relative font-retro z-10 mt-10">
+			<slot/>
+		</div>
+	</body>
+</html>

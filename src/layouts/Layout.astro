@@ -1,22 +1,25 @@
-<!doctype html>
+---
+import './src/styles/global.css'
+import {UserButton} from "@clerk/astro/components";
+---
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Starship Chronicles | Embark on an Interstellar Odyssey</title>
+</head>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+	<body class="bg-nebula-black text-white dark overflow-x-hidden relative">
+
+	<div class="fixed top-0 left-0 z-50 font-doto p-2 w-full flex justify-between items-center bg-emerald-950">
+		<div class="flex gap-2 items-center">
+			<img class="w-8 h-8" src="/assets/img/logo.webp">
+			<p>Starship Chronicle</p>
+		</div>
+		<UserButton />
+	</div>
+	<slot/>
+
+	</body>
+	</html>

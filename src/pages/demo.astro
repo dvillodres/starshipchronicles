@@ -1,0 +1,8 @@
+---
+import Game from "../components/game/Game.svelte";
+import GameLayout from "../layouts/GameLayout.astro";
+---
+
+<GameLayout>
+	<Game isDemo={true} client:load />
+</GameLayout>

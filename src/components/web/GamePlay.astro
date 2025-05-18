@@ -1,0 +1,64 @@
+<!-- Gameplay Panel -->
+<section class="py-16 px-4 md:px-8 lg:px-16 bg-nebula-black bg-opacity-90">
+    <h2 class="text-xl md:text-2xl text-center text-crt-green mb-12">INTERFAZ DE GESTIÓN DE NAVE</h2>
+
+    <div class="max-w-4xl mx-auto bg-deep-space p-6 border-2 border-crt-green rounded-md">
+        <!-- Ship Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <div class="led-display text-center">
+                <p class="text-xs mb-2">COMBUSTIBLE</p>
+                <p class="text-sm md:text-base">78%</p>
+            </div>
+            <div class="led-display text-center">
+                <p class="text-xs mb-2">INTEGRIDAD DEL CASCO</p>
+                <p class="text-sm md:text-base">92%</p>
+            </div>
+            <div class="led-display text-center">
+                <p class="text-xs mb-2">CRÉDITOS</p>
+                <p class="text-sm md:text-base">12,450</p>
+            </div>
+        </div>
+
+        <!-- Crew Roles -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="flex flex-col items-center">
+                <div class="flex gap-2">
+                    <div class="w-16 h-16 bg-nebula-black border border-neon-cyan mb-2 overflow-hidden">
+                        <img src="assets/img/pilot_f.png" class="w-full h-full object-center object-cover" />
+                    </div>
+                    <div class="w-16 h-16 bg-nebula-black border border-neon-cyan mb-2 overflow-hidden">
+                        <img src="assets/img/pilot_m.png" class="w-full h-full object-center object-cover" />
+                    </div>
+                </div>
+                <p class="text-xs text-neon-cyan">PILOTO</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="flex gap-2">
+                    <div class="w-16 h-16 bg-nebula-black border border-crt-green mb-2 overflow-hidden">
+                        <img src="assets/img/engineer_f.png" class="w-full h-full object-center object-cover" />
+                    </div>
+                    <div class="w-16 h-16 bg-nebula-black border border-crt-green mb-2 overflow-hidden">
+                        <img src="assets/img/engineer_m.png" class="w-full h-full object-center object-cover" />
+                    </div>
+                </div>
+                <p class="text-xs text-crt-green">INGENIERO</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="flex gap-2">
+                    <div class="w-16 h-16 bg-nebula-black border border-warning-amber mb-2 overflow-hidden">
+                        <img src="assets/img/soldier_f.png" class="w-full h-full object-center object-cover" />
+                    </div>
+                    <div class="w-16 h-16 bg-nebula-black border border-warning-amber mb-2 overflow-hidden">
+                        <img src="assets/img/soldier_m.png" class="w-full h-full object-center object-cover" />
+                    </div>
+                </div>
+                <p class="text-xs text-warning-amber">MERCENARIO</p>
+            </div>
+        </div>
+
+        <!-- Warning Text -->
+        <div class="bg-black border border-warning-amber p-4 text-center">
+            <p class="text-warning-amber text-xs md:text-sm">CADA SALTO CONSUME RECURSOS - ELIGE TU CAMINO CON SABIDURÍA</p>
+        </div>
+    </div>
+</section>

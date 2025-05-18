@@ -1,0 +1,39 @@
+<header class="w-full pt-8 pb-12 px-4 md:px-8 lg:px-16 flex flex-col items-center justify-center min-h-screen">
+<h1 class="text-2xl md:text-4xl lg:text-6xl text-center text-crt-green mb-8 tracking-wider">
+STARSHIP CHRONICLES
+</h1>
+
+<div class="font-doto w-full min-h-16 max-w-2xl mb-8 text-center relative tags">
+<p class="text-sm md:text-lg text-neon-cyan">¡EMBARCA EN UNA ODISEA INTERESTELAR!</p>
+<p class="hidden text-sm md:text-lg text-neon-cyan">¿A DÓNDE TE LLEVARÁ TU AMBICIÓN CÓSMICA?</p>
+<p class="hidden text-sm md:text-lg text-warning-amber">EL VACÍO RECOMPENSA A LOS AUDACES... Y CASTIGA A LOS TEMERARIOS</p>
+</div>
+
+<div class="flex flex-col sm:flex-row gap-4 sm:gap-8 mb-16">
+<a href="/tutorial" class="cursor-crosshair px-6 py-3 bg-neon-cyan text-nebula-black font-bold rounded-md border-2 border-white hover:bg-white hover:text-neon-cyan transition-colors duration-300 animate-glow text-sm md:text-base">
+INICIAR TUTORIAL
+</a>
+<button class="cursor-crosshair px-6 py-3 bg-transparent text-warning-amber font-bold rounded-md border-2 border-warning-amber hover:bg-warning-amber hover:text-nebula-black transition-colors duration-300 hover:animate-none animate-pulse-slow text-sm md:text-base">
+REGISTRARSE PARA ACCESO CÓSMICO
+</button>
+</div>
+
+<div class="bg-black border-2 border-warning-amber p-4 max-w-md mx-auto text-center text-warning-amber">
+<p class=" text-xs">EL ACCESO NO AUTORIZADO RESULTARÁ EN UNA EXPULSIÓN INMEDIATA AL ESPACIO PROFUNDO</p>
+</div>
+</header>
+
+<script>
+const paragraphs = document.querySelectorAll('.tags p');
+let currentIndex = 0;
+
+function rotateParagraphs() {
+    paragraphs[currentIndex].classList.add('hidden');
+
+    currentIndex = (currentIndex + 1) % paragraphs.length;
+
+    paragraphs[currentIndex].classList.remove('hidden');
+    }
+
+setInterval(rotateParagraphs, 2200);
+</script>
