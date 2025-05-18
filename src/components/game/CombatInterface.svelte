@@ -6,7 +6,7 @@
 
 <div class="bg-nebula-black border-2 border-warning-amber  p-4 mb-4">
     <h4 class="text-warning-amber text-lg mb-3 font-retro flex items-center justify-center">
-        <span class="mr-2">🔥</span> COMBATE CONTRA {enemy.shipType.toUpperCase()}
+         COMBATE CONTRA {enemy.shipType.toUpperCase()}
     </h4>
     
     <div class="bg-deep-space py-2 px-3  mb-4 led-display text-center">
@@ -18,14 +18,14 @@
             on:click={() => gameStore.combatRound()}
             class="px-3 py-2 bg-warning-amber text-nebula-black font-bold  hover:bg-white hover:text-warning-amber transition-colors duration-300 cursor-crosshair flex items-center justify-center"
         >
-            <span class="mr-1">🎲</span> ATACAR
+            ATACAR
         </button>
         
         <button 
             on:click={() => gameStore.fleeCombat()}
             class="px-3 py-2 bg-nebula-black text-warning-amber border-2 border-warning-amber font-bold  hover:bg-warning-amber/20 transition-colors duration-300 cursor-crosshair flex items-center justify-center"
         >
-            <span class="mr-1">🏃</span> HUIR
+             HUIR
         </button>
     </div>
 </div>

@@ -1,0 +1,124 @@
+---
+// src/pages/tutorial.astro
+import Layout from '../layouts/Layout.astro';
+import {SignedIn, SignedOut, SignInButton} from "@clerk/astro/components";
+---
+<Layout>
+	<main class="max-w-6xl mx-auto px-6 py-16 font-retro space-y-32">
+
+		<section class="text-center relative bg-gradient-to-b from-nebula-black via-emerald-950/30 to-nebula-black py-20 rounded-lg shadow-inner">
+			<img style="z-index: 0" src="/assets/img/logo.webp" alt="Starship Chronicle Logo" class="logo mx-auto w-48 h-48 mb-2 animate-grow [animation-timeline:scroll()]" />
+
+			<h1 class="text-5xl font-retro text-crt-green mb-6">Manual del Comandante</h1>
+
+
+			<p class="text-white/70 font-doto text-lg md:text-xl max-w-3xl mx-auto mb-10 z-10">
+				Tu nave está lista. La galaxia te espera. Aprende a dominar el universo de <strong>Starship Chronicle</strong> antes de lanzarte al hiperespacio.
+			</p>
+			<div class="absolute -bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col animate-pulse z-40">
+				<span class="animate-bounce text-crt-green text-2xl block">↓</span>
+				<small class="font-doto text-crt-green block">Scroll</small>
+			</div>
+		</section>
+
+
+
+		<!-- STEP 1 -->
+		<section class="flex flex-col md:flex-row items-center gap-8">
+			<img src="/assets/img/tutorial/scanner.webp" alt="Escáner galáctico" class="w-full md:w-1/2 rounded border border-crt-green/20 shadow-md" />
+			<div class="md:w-1/2 space-y-4">
+				<h2 class="text-2xl text-crt-green">🪐 Escanea planetas cercanos</h2>
+				<p class="text-white/80 font-doto text-base">
+					Empiezas sin planeta. Explora los sistemas accesibles con el combustible disponible. Cuanto más lejos viajes, más recompensas... y peligros.
+				</p>
+			</div>
+		</section>
+
+		<!-- STEP 2 -->
+		<section class="flex flex-col md:flex-row-reverse items-center gap-8">
+			<img src="/assets/img/tutorial/events.webp" alt="Eventos de viaje" class="w-full md:w-1/2 rounded border border-crt-green/20 shadow-md" />
+			<div class="md:w-1/2 space-y-4">
+				<h2 class="text-2xl text-crt-green">🚀 Viaja con riesgo calculado</h2>
+				<p class="text-white/80 font-doto text-base">
+					Cada unidad de distancia consume combustible y activa un evento aleatorio: piratas, restos abandonados, tormentas… ¿Estás preparado para lo inesperado?
+				</p>
+			</div>
+		</section>
+
+		<!-- STEP 3 -->
+		<section class="flex flex-col md:flex-row items-center gap-8">
+			<img src="/assets/img/tutorial/planet.webp" alt="Interacción en planetas" class="w-full md:w-1/2 rounded border border-crt-green/20 shadow-md" />
+			<div class="md:w-1/2 space-y-4">
+				<h2 class="text-2xl text-crt-green">🌍 Interactúa en los planetas</h2>
+				<p class="text-white/80 font-doto text-base">
+					Repara tu nave, acepta misiones y comercia. Cada planeta tiene precios distintos y condiciones únicas. Planea bien o te quedarás sin recursos.
+				</p>
+			</div>
+		</section>
+
+		<!-- STEP 4 -->
+		<section class="flex flex-col md:flex-row-reverse items-center gap-8">
+			<img src="/assets/img/tutorial/missions.webp" alt="Misiones" class="w-full md:w-1/2 rounded border border-crt-green/20 shadow-md" />
+			<div class="md:w-1/2 space-y-4">
+				<h2 class="text-2xl text-crt-green">📜 Acepta encargos estelares</h2>
+				<p class="text-white/80 font-doto text-base">
+					Transporta suministros, haz entregas encubiertas o acude a misiones de rescate. Sólo puedes llevar una a la vez. Elige bien tus prioridades.
+				</p>
+			</div>
+		</section>
+
+		<!-- STEP 5 -->
+		<section class="flex flex-col md:flex-row items-center gap-8">
+			<img src="/assets/img/tutorial/combat.webp" alt="Combate" class="w-full md:w-1/2 rounded border border-crt-green/20 shadow-md" />
+			<div class="md:w-1/2 space-y-4">
+				<h2 class="text-2xl text-crt-green">⚔️ Combate o huye</h2>
+				<p class="text-white/80 font-doto text-base">
+					Cuando un enemigo aparece, tú decides: luchar con tus láseres o huir a cambio de perder casco. Un escudo activo puede salvarte en el momento justo.
+				</p>
+			</div>
+		</section>
+
+		<!-- STEP 6 -->
+		<section class="flex flex-col md:flex-row-reverse items-center gap-8">
+			<img src="/assets/img/tutorial/victory.webp" alt="Victoria" class="w-full md:w-1/2 rounded border border-crt-green/20 shadow-md" />
+			<div class="md:w-1/2 space-y-4">
+				<h2 class="text-2xl text-crt-green">🌟 Tu objetivo: ganar fama</h2>
+				<p class="text-white/80 font-doto text-base">
+					Cuando llegues a 6 puntos de Fama, habrás forjado tu leyenda como capitán estelar. Pero cuidado: el Renegado también compite por el trono galáctico.
+				</p>
+			</div>
+		</section>
+
+		<!-- GAME LOG SECTION -->
+		<section class="bg-nebula-black border border-crt-green/20 rounded-lg p-10 shadow-md font-doto">
+			<h2 class="text-2xl text-crt-green text-center mb-8">
+				<span class="animate-blink">></span>El Registro de Bitácora
+			</h2>
+			<div class="flex flex-col md:flex-row items-center gap-8">
+				<img src="/assets/img/tutorial/log.webp" alt="Log del juego" class="w-full md:w-1/2 rounded border border-crt-green/20 shadow" />
+
+				<div class="md:w-1/2 space-y-4 text-white/80">
+					<p>
+						Cada acción que tomas queda registrada. El <strong>Log</strong> te informa de:
+					</p>
+					<ul class="list-disc list-inside space-y-2 text-crt-green/90">
+						<li>Resultados de combates y tiradas.</li>
+						<li>Eventos durante los viajes.</li>
+						<li>Mensajes de misiones y decisiones.</li>
+						<li>Compras, ventas, daños y mejoras.</li>
+					</ul>
+					<p class="text-white/70 mt-4">
+						Presta atención al Log. No es solo un historial: <em>es tu brújula narrativa</em>.
+					</p>
+				</div>
+			</div>
+		</section>
+
+
+		<div class="text-center">
+			<a href="/" class="px-6 py-2 border border-crt-green text-crt-green font-doto hover:bg-crt-green hover:text-black transition cursor-crosshair">
+				← Volver al inicio
+			</a>
+		</div>
+	</main>
+</Layout>

@@ -1,41 +1,58 @@
-const missionTemplates = [
-    {
-        type: 'delivery',
-        name: 'Entregar suministros',
-        goods: 'food',
-        amount: 2,
-        fame: 1,
-        credits: 6
-    },
-    {
-        type: 'contraband',
-        name: 'Tráfico ilegal',
-        goods: 'narcotics',
-        amount: 1,
-        fame: 1,
-        credits: 10,
-        bounty: 1
-    },
-    {
-        type: 'rescue',
-        name: 'Misión de rescate',
-        fame: 0,
-        bounty: -2
-    }
+const goodsList = ['food', 'plastics', 'computers', 'narcotics'];
+
+
+
+const cargoNames = {
+    food: 'Comida',
+    plastics: 'Plásticos',
+    computers: 'Computadoras',
+    narcotics: 'Narcóticos',
+    fuel: 'Combustible'
+}
+
+const minimumPrices = {
+    food: 2,
+    plastics: 6,
+    computers: 12,
+    narcotics: 10
+};
+
+
+const deliveryMessages = [
+    'Una colonia en {planet} necesita {amount} unidad(es) de {goods}.',
+    'Transporta {amount} de {goods} a {planet}. Recibirás pago al llegar.',
+    'La nave de carga falló. Tu misión: entregar {amount} {goods} en {planet}.',
+    'Suministros críticos: lleva {amount} unidad(es) de {goods} a {planet} cuanto antes.',
+];
+
+const contrabandMessages = [
+    'Un contacto misterioso te espera en {planet}. Lleva {amount} de {goods}. No hagas preguntas.',
+    'Contrabando delicado: {amount} unidad(es) de {goods} deben llegar a {planet}.',
+    'Tu nave no será registrada… si eres rápido. Entrega {amount} de {goods} en {planet}.',
+    'Hay compradores en {planet} interesados en {goods}. Lleva {amount}, discretamente.',
+];
+
+const rescueMessages = [
+    'Una señal de auxilio llega desde {planet}. Viaja allí para evacuar a los sobrevivientes.',
+    'Colonos atrapados en {planet} necesitan extracción urgente.',
+    'Una tormenta solar se acerca. Ve a {planet} y rescata a los técnicos atrapados.',
+    'Una instalación remota en {planet} ha quedado aislada. Tu ayuda es vital.',
 ];
 
 function randomFrom(array) {
     return array[Math.floor(Math.random() * array.length)];
 }
 
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 export function generateMissionsForPlanet(currentPlanet, galaxy, count = 1) {
     const missions = [];
 
-    // 🧠 Encuentra el índice del planeta actual en la galaxia
     const currentIndex = galaxy.findIndex(p => p.id === currentPlanet.id);
     if (currentIndex === -1) return [];
 
-    // 🔎 Filtra planetas dentro de rango máximo
     const maxDistance = 3;
 
     const nearbyPlanets = galaxy.filter((planet, index) => {
@@ -44,30 +61,47 @@ export function generateMissionsForPlanet(currentPlanet, galaxy, count = 1) {
     });
 
     for (let i = 0; i < count; i++) {
-        const template = randomFrom(missionTemplates);
+        const isContraband = Math.random() < 0.25;
+        const isRescue = !isContraband && Math.random() < 0.25;
         const targetPlanet = randomFrom(nearbyPlanets);
 
-        const mission = {
-            name: template.name,
+        let mission = {
+            name: '',
             description: '',
             requirements: { planetId: targetPlanet.id },
-            planetName: targetPlanet.name, // solo para mostrar
+            planetName: targetPlanet.name,
             reward: {},
-            distance: Math.abs(currentIndex - targetPlanet.id)
+            distance: Math.abs(currentIndex - targetPlanet.id),
         };
 
-        if (template.type === 'delivery' || template.type === 'contraband') {
-            mission.requirements.sell = { [template.goods]: template.amount };
-            mission.reward.credits = template.credits;
-            mission.reward.hull = template.fame;
-            if (template.bounty) mission.reward.bounty = template.bounty;
+        if (isRescue) {
+            const fame = getRandomInt(1, 2);
+            const bounty = -getRandomInt(1, 2);
+            mission.name = 'Misión de Rescate';
+            mission.reward = { fame, bounty };
+            mission.description = randomFrom(rescueMessages)
+                .replace('{planet}', targetPlanet.name);
+        } else {
+            const goods = randomFrom(isContraband ? ['narcotics'] : goodsList.filter(g => g !== 'narcotics'));
+            const amount = getRandomInt(1, isContraband ? 2 : 3);
+            const fame = getRandomInt(0, 1);
 
-            mission.description = `Vende ${template.amount} ${template.goods} en ${targetPlanet.name}`;
-        }
+            const basePrice = minimumPrices[goods];
+            const totalBaseCost = basePrice * amount;
+            const profitMargin = isContraband ? getRandomInt(6, 10) : getRandomInt(3, 6);
+            const credits = totalBaseCost + profitMargin;
 
-        if (template.type === 'rescue') {
-            mission.reward.bounty = template.bounty;
-            mission.description = `Viaja a ${targetPlanet.name} para realizar una evacuación.`;
+            mission.name = isContraband ? 'Tráfico Ilegal' : 'Entrega Comercial';
+            mission.requirements.sell = { [goods]: amount };
+            mission.reward = { credits, fame };
+            if (isContraband) mission.reward.bounty = 1;
+
+            const textTemplates = isContraband ? contrabandMessages : deliveryMessages;
+
+            mission.description = randomFrom(textTemplates)
+                .replace('{amount}', amount)
+                .replace('{goods}', cargoNames[goods])
+                .replace('{planet}', targetPlanet.name);
         }
 
         missions.push(mission);
@@ -75,4 +109,3 @@ export function generateMissionsForPlanet(currentPlanet, galaxy, count = 1) {
 
     return missions;
 }
-

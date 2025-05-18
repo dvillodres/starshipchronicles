@@ -16,10 +16,10 @@
 </script>
 
 <div class="bg-deep-space/80 border border-neon-cyan p-4 min-h-96">
-    <p class="text-crt-green font-doto text-sm mb-2">{`<Planetas\\>`}</p>
+    <p class="text-crt-green font-doto text-sm mb-2">{`<Scanner\\>`}</p>
 
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
         {#each planetsWithMeta as { planet, distance, reachable }, i}
                 <button on:click={reachable ? () => gameStore.selectPlanet(planet) : null}
                         class={`p-2 text-left transition-all duration-300 border w-full  ${reachable ? 'bg-nebula-black border-neon-cyan text-white hover:bg-neon-cyan/20 cursor-crosshair' : 'bg-black/30 border-gray-700 text-gray-500 cursor-not-allowed'} ${planet.isCurrentPlanet ? 'border-warning-amber' : ''}`} >
