@@ -7,7 +7,7 @@ import { dark } from '@clerk/themes'
 import svelte from '@astrojs/svelte';
 import { esES } from '@clerk/localizations'
 
-import node from '@astrojs/node';
+import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
@@ -22,8 +22,6 @@ export default defineConfig({
     },
   })],
 
-  adapter: node({
-    mode: 'standalone',
-  }),
+  adapter: vercel(),
   output: "server",
 });
