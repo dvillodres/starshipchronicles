@@ -13,7 +13,6 @@
     import HullStatus from "./HullStatus.svelte";
     import VictoryScreen from "./VictoryScreen.svelte";
     import CurrentMission from "./CurrentMission.svelte";
-    import {SignInButton} from "@clerk/astro/components";
 
     let state;
     export let isDemo = false;
@@ -36,6 +35,24 @@
 {:else}
 
     <div class="max-w-6xl mx-auto p-4 md:p-6 flex gap-6 flex-col font-retro">
+
+        {#if state.isDemo && state.demoTravelCount >= state.demoTravelLimit}
+
+                <div class="fixed inset-0  bg-black/90 text-crt-green flex items-center justify-center text-center z-50 p-6 font-doto">
+                    <div class="max-w-md">
+                        <h2 class="text-2xl mb-4">🚧 Has alcanzado el límite de la demo</h2>
+                        <p class="mb-6">
+                            Has realizado los 2 viajes disponibles en esta versión de prueba.<br>
+                            Inicia sesión para continuar tu aventura intergaláctica.
+                        </p>
+
+                        <a href="/juego" class="px-6 py-3 bg-crt-green text-black text-lg font-bold border border-crt-green hover:bg-transparent hover:text-crt-green transition">
+                            🚀 Inicia Sesión
+                        </a>
+                    </div>
+                </div>
+        {/if}
+
         {#if !dismissed}
             <div class="block lg:hidden bg-black/80 text-white text-center p-4 border border-red-600 text-sm font-doto">
                 ⚠️ Este juego se disfruta mucho más en pantalla grande. Prueba en un ordenador para una mejor experiencia.
@@ -108,22 +125,6 @@
         >
             Salir del juego
         </a>
-
-        {#if state.isDemo && state.demoTravelCount >= state.demoTravelLimit}
-            <div class="fixed inset-0 bg-black/90 text-crt-green flex items-center justify-center text-center z-50 p-6 font-doto">
-                <div class="max-w-md">
-                    <h2 class="text-2xl mb-4">🚧 Has alcanzado el límite de la demo</h2>
-                    <p class="mb-6">
-                        Has realizado los 2 viajes disponibles en esta versión de prueba.<br>
-                        Inicia sesión para continuar tu aventura intergaláctica.
-                    </p>
-
-                    <SignInButton mode="modal" class="inline-block bg-crt-green text-black font-bold px-5 py-2 hover:bg-white transition">
-                        🚀 Inicia Sesión
-                    </SignInButton>
-                </div>
-            </div>
-        {/if}
 
     </div>
 
