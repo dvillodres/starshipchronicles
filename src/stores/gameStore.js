@@ -169,7 +169,7 @@ function createGameStore() {
             state.currentPlanetIndex = destinationIndex;
             state.currentPlanet = planet;
 
-            state.availableMissions = generateMissionsForPlanet(planet, state.galaxy);
+            state.availableMissions = generateMissionsForPlanet(planet, state.galaxy, planet.missionsAvailable );
 
             state.phase = 'travel';
             state.pendingEvents = distance;

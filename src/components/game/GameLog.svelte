@@ -3,7 +3,7 @@
     export let phase;
 </script>
 
-<div class="bg-deep-space/90 border overflow-hidden border-crt-green p-4 h-full">
+<div class="bg-deep-space/90 border overflow-hidden border-crt-green p-4 h-full max-h-96">
     <span class="text-crt-green font-doto text-sm">{`<Log\\>`}</span>
 
     <div class="log overflow-y-auto h-full  p-3 font-doto text-sm">

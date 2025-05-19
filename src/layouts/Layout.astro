@@ -1,25 +1,48 @@
 ---
 import '../styles/global.css'
-import {UserButton} from "@clerk/astro/components";
+import Header from "../components/commons/Header.astro";
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
 	<title>Starship Chronicles | Embark on an Interstellar Odyssey</title>
 </head>
 
 	<body class="bg-nebula-black text-white dark overflow-x-hidden relative">
 
-	<div class="fixed top-0 left-0 z-50 font-doto p-2 w-full flex justify-between items-center bg-emerald-950">
-		<div class="flex gap-2 items-center">
-			<img class="w-8 h-8" src="/assets/img/logo.webp">
-			<p>Starship Chronicle</p>
-		</div>
-		<UserButton />
-	</div>
+	<Header/>
 	<slot/>
 
+
+	<button id="scrollToTopBtn" class="fixed bottom-4 right-4 z-50 w-18 h-18 rounded-full shadow-md  cursor-pointer hover:opacity-80 opacity-0 pointer-events-none transition-opacity duration-300">
+		<img src="/assets/img/icons/go-up.webp" alt="Subir" class="w-full h-full object-contain animate-[jiggle_2s_ease-in-out_infinite]" />
+	</button>
 	</body>
 	</html>
+
+
+<script>
+	const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+	window.addEventListener("scroll", () => {
+		if (window.scrollY > 300) {
+			scrollToTopBtn.classList.add("opacity-100");
+			scrollToTopBtn.classList.remove("opacity-0", "pointer-events-none");
+		} else {
+			scrollToTopBtn.classList.remove("opacity-100");
+			scrollToTopBtn.classList.add("opacity-0", "pointer-events-none");
+		}
+	});
+
+	scrollToTopBtn.addEventListener("click", () => {
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth"
+		});
+	});
+</script>
+

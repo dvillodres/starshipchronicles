@@ -1,5 +1,19 @@
 <script>
     import { gameStore } from '../../stores/gameStore.js';
+    import {onMount} from "svelte";
+
+    async function increaseVictory() {
+        await fetch('/api/increase-losses', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+    }
+
+    onMount(async () => {
+        await increaseVictory();
+    })
 </script>
 
 <div class="flex flex-col items-center justify-center p-8 bg-nebula-black/80 border-2 border-warning-amber  shadow-lg">

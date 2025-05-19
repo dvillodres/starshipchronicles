@@ -46,7 +46,7 @@ export function generatePlanet(id) {
             fuel: getPrice(2, 4)
         },
         repairCost: getPrice(2, 4),
-        missionsAvailable: getPrice(1, 2),
+        missionsAvailable: getPrice(3, 3),
         sellsShield: Math.random() < 0.3,
         shieldPrice: 10
     };

@@ -1,24 +1,21 @@
 ---
 import '../styles/global.css'
 import {UserButton} from "@clerk/astro/components";
+import Header from "../components/commons/Header.astro";
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="icon" type="image/x-icon" href="/favicon.ico">
 		<title>Starship Chronicles | Embark on an Interstellar Odyssey</title>
 	</head>
 
 	<body class="bg-nebula-black text-white dark overflow-x-hidden relative">
 
-	<div class="fixed top-0 left-0 z-50 font-doto p-2 w-full flex justify-between items-center bg-emerald-950">
-		<div class="flex gap-2 items-center">
-			<img class="w-8 h-8" src="/assets/img/logo.webp">
-			<p>Starship Chronicle</p>
-		</div>
-		<UserButton />
-	</div>
+		<Header/>
 		<div class="starfield absolute font-retro inset-0 z-0">
 			<div class=" absolute inset-0 z-0">
 				<video class="object-cover object-center w-full h-full opacity-60 blur-xs" autoplay muted loop>
