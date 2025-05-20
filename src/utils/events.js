@@ -1,4 +1,3 @@
-// utils/events.js
 
 function randomFrom(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
@@ -240,7 +239,6 @@ export function generateEvent(state) {
     });
 
 
-    // Elegimos y ejecutamos una plantilla al azar
     const selected = randomFrom(templates);
     return selected();
 }

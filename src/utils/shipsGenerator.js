@@ -18,18 +18,16 @@ export const generateShips = (count) => {
 }
 
 const generateShip = () => {
-    // Elegir un tipo de nave aleatorio
     const shipType = shipTypes[Math.floor(Math.random() * shipTypes.length)];
 
     let fuel, cargoSpace, hull, attack;
 
-    // Generar atributos de la nave basados en el tipo
     do {
         fuel = Math.floor(Math.random() * (shipType.maxFuel - shipType.minFuel + 1)) + shipType.minFuel;
         cargoSpace = Math.floor(Math.random() * (shipType.maxCargo - shipType.minCargo + 1)) + shipType.minCargo;
         hull = Math.floor(Math.random() * (shipType.maxHull - shipType.minHull + 1)) + shipType.minHull;
         attack = Math.floor(Math.random() * (shipType.maxAttack - shipType.minAttack + 1)) + shipType.minAttack;
-    } while (fuel + cargoSpace + hull + attack > 15); // Ajusta este límite según sea necesario
+    } while (fuel + cargoSpace + hull + attack > 15);
 
     const ship = {
         type: shipType.name,
@@ -43,21 +41,17 @@ const generateShip = () => {
 }
 
 const generateShipName = (ship) => {
-    // Crear un nombre basado en los atributos de la nave
     let name = "";
 
-    // Usar un prefijo aleatorio
     const prefix = prefixes[Math.floor(Math.random() * prefixes.length)];
     name += prefix;
 
-    // Agregar un sufijo basado en el tipo de nave o atributos
     if (ship.attack > 3) {
         name += " " + suffixes[Math.floor(Math.random() * suffixes.length)];
     } else {
         name += " " + suffixes[Math.floor(Math.random() * suffixes.length)];
     }
 
-    // Agregar un número aleatorio para mayor singularidad
     name += ` #${Math.floor(Math.random() * 100) + 1}`;
 
     return name;

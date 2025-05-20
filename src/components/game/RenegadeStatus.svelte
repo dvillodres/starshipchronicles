@@ -1,5 +1,5 @@
 <script>
-    export let fame = 0; // nivel actual del Renegado (0–6)
+    export let fame = 0;
 </script>
 
 <div class="relative bg-nebula-black border border-red-800 p-3 font-doto text-white flex items-center gap-4 h-32">

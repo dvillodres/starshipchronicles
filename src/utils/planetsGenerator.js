@@ -1,5 +1,5 @@
-const jobs = ["Transport", "Smuggling", "Mining", "Rescue", "Exploration", "Research"]; // Add more job types
-const risks = ["Alliance", "Pirates", "Radiation", "Meteorites", "Bandits", "Storms"]; // Add more risk types
+const jobs = ["Transport", "Smuggling", "Mining", "Rescue", "Exploration", "Research"];
+const risks = ["Alliance", "Pirates", "Radiation", "Meteorites", "Bandits", "Storms"];
 
 export const generatePlanets = (count) => {
     let previousJobs = [];
@@ -8,7 +8,7 @@ export const generatePlanets = (count) => {
     for (let i = 0; i < count; i++) {
         const planet = generatePlanet(previousJobs);
         planets.push(planet);
-        previousJobs = planet.jobs; // Update previous jobs
+        previousJobs = planet.jobs;
     }
 
     return planets;

@@ -22,12 +22,10 @@
         fuel: '/assets/img/icons/fuel.webp'
     };
 
-    // Plano lineal de cada unidad de carga (1 elemento por unidad)
     $: cargoList = Object.entries(cargo).flatMap(([type, amount]) =>
         Array(amount).fill(type)
     );
 
-    // Rellenamos con vacíos si hay huecos disponibles
     $: displaySlots = [...cargoList, ...Array(cargoLimit - cargoList.length).fill(null)];
 </script>
 

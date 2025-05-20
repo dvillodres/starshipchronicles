@@ -1,7 +1,7 @@
 <script>
-    export let hull = 0; // nivel actual del Renegado (0–6)
-    export let maxHull = 0; // nivel actual del Renegado (0–6)
-    export let shield; // nivel actual del Renegado (0–6)
+    export let hull = 0;
+    export let maxHull = 0;
+    export let shield;
 </script>
 
 <div class="relative bg-nebula-black border border-crt-green p-3 font-doto text-white flex items-center gap-4  h-32">

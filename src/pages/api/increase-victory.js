@@ -20,7 +20,6 @@ export async function POST({ locals }) {
     }
 
     try {
-        // 1. Buscar el registro en Strapi por username
         const res = await fetch(`${STRAPI_API_URL}/player-stats?[username]=${username}`, {
             headers: {
                 'Content-Type': 'application/json',
@@ -36,7 +35,6 @@ export async function POST({ locals }) {
         const data = await res.json();
         const record = data?.[0];
         if (record) {
-            // 2a. Si existe, actualizar el campo `win`
             const statId = record.id;
             const currentWins = record.wins || 0;
 
@@ -62,7 +60,6 @@ export async function POST({ locals }) {
                 headers: { 'Content-Type': 'application/json' },
             });
         } else {
-            // 2b. Si no existe, crear un nuevo registro
             const createRes = await fetch(`${STRAPI_API_URL}/player-stats`, {
                 method: 'POST',
                 headers: {

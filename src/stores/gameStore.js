@@ -97,7 +97,6 @@ function createGameStore() {
                     state.pendingEvents -= 1;
                     state.activeEvent = null;
 
-                    // Verificar si completamos la fase de viaje
                     if (state.phase === 'travel' && state.pendingEvents === 0) {
                         state.phase = 'planet';
                         logMessage(state, `[LLEGADA] Has alcanzado ${state.currentPlanet.name}.`);
@@ -133,7 +132,6 @@ function createGameStore() {
 
             state.currentEnemy = null;
 
-            // Decrementar eventos pendientes porque la huida es un evento resuelto
             state.pendingEvents -= 1;
             state.activeEvent = null;
 
@@ -200,10 +198,8 @@ function createGameStore() {
             const req = m.requirements;
             let complete = true;
 
-            // Requisito de destino
             if (req.planetId && req.planetId !== p.id) complete = false;
 
-            // Requisito de venta
             if (req.sell) {
                 for (let item in req.sell) {
                     if (state.cargo[item] < req.sell[item]) {
@@ -214,14 +210,12 @@ function createGameStore() {
             }
 
             if (complete) {
-                // Quitar recursos
                 if (req.sell) {
                     for (let item in req.sell) {
                         state.cargo[item] -= req.sell[item];
                     }
                 }
 
-                // Aplicar recompensas
                 const reward = m.reward;
                 if (reward.credits) state.credits += reward.credits;
                 if (reward.fame) state.fame += reward.fame;
@@ -277,13 +271,11 @@ function createGameStore() {
                     break;
 
                 case 'ship':
-                    // Iniciar combate
                     state.currentEnemy = {
                         ...event,
                         currentHull: event.hull
                     };
                     logMessage(state, `[ENCUENTRO] Entras en combate con un ${event.shipType}`);
-                    // Importante: NO restamos pendingEvents aún, hasta que acabe el combate
                     return state;
 
                 default:
