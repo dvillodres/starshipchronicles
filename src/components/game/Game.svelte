@@ -20,6 +20,7 @@
         state = value;
     });
     let dismissed = false;
+    let dismissedDemo = false;
 
     onMount(() => {
         if (isDemo) {
@@ -36,6 +37,8 @@
 
     <div class="max-w-6xl mx-auto p-4 md:p-6 flex gap-6 flex-col font-retro">
 
+
+
         {#if state.isDemo && state.demoTravelCount >= state.demoTravelLimit}
 
                 <div class="fixed inset-0  bg-black/90 text-crt-green flex items-center justify-center text-center z-50 p-6 font-doto">
@@ -51,6 +54,19 @@
                         </a>
                     </div>
                 </div>
+        {/if}
+
+
+        {#if isDemo && !dismissedDemo}
+            <div class="block  bg-black/80 text-white text-center p-4 border border-red-600 text-sm font-doto">
+                ⚠️ Estás jugando la versión de prueba, <a class="text-crt-green underline" href="/juego">incia sesión</a> gratis para disfrutar del juego completo.
+                <button
+                        on:click={() => dismissedDemo = true}
+                        class="cursor-pointer mt-2 text-red-400  underline text-xs hover:text-red-200 transition"
+                >
+                    Cerrar información
+                </button>
+            </div>
         {/if}
 
         {#if !dismissed}
