@@ -1,48 +1,107 @@
-# Astro Starter Kit: Basics
+# 🌌 Starship Chronicle
 
-```sh
-npm create astro@latest -- --template basics
-```
+> Una odisea retrofuturista de estrategia, comercio y supervivencia estelar.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+[🎮 Jugar ahora](https://starshipchronicles.com) · [📄 Tutorial](https://starshipchronicles.com/tutorial) · [🧪 Probar demo](https://starshipchronicles.com/demo)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## ✨ Descripción
 
-## 🚀 Project Structure
+**Starship Chronicle** es un juego web inspirado en el microjuego de cartas _New Frontier (2020)_, transformado en una experiencia digital narrativa. El jugador comanda una nave estelar a través de una galaxia generada proceduralmente, completando misiones, comerciando entre planetas, y tomando decisiones tácticas mientras compite contra un rival galáctico: **el Renegado**.
 
-Inside of your Astro project, you'll see the following folders and files:
+Este proyecto fue desarrollado como parte de la [Hackathon de Midudev + Clerk (2024)](https://midudev.com), combinando autenticación, SSR y una estética retro inmersiva.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+---
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 🚀 Características principales
 
-## 🧞 Commands
+- ✅ Generación procedural de planetas.
+- ✅ Exploración basada en combustible disponible.
+- ✅ Eventos narrativos aleatorios (combates, peligros, recompensas).
+- ✅ Sistema de comercio con precios dinámicos.
+- ✅ Misiones variadas: entregas, contrabando y rescates.
+- ✅ Reputación y progreso: fama, créditos, escudos y recompensas.
+- ✅ Log narrativo que registra todas tus decisiones.
+- ✅ **Ranking de jugadores** con victorias/derrotas (requiere login).
+- ✅ Modo demo para probar antes de registrarse.
 
-All commands are run from the root of the project, from a terminal:
+---
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 🖥️ Stack técnico
 
-## 👀 Want to learn more?
+- **Frontend:** Svelte + Tailwind CSS
+- **Fullstack/SSR:** Astro
+- **Auth:** [Clerk](https://clerk.dev)
+- **Backend externo:** Strapi (para estadísticas de jugadores)
+- **Estética:** CRT, fuente retro, UI minimalista terminal-style
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+
+## 📦 Instalación local
+
+1. Clona el repositorio:
+
+   ```bash
+   git clone https://github.com/dvillodres/starshipchronicles
+   cd starshipchronicles
+   ```
+
+2. Instala dependencias:
+
+   ```bash
+   npm install
+   ```
+
+3. Crea un archivo `.env`:
+
+   ```env
+   PUBLIC_SITE_URL=http://localhost:4321
+   VITE_CLERK_PUBLISHABLE_KEY=tu_clave
+   VITE_STRAPI_API_URL=https://mi-api-strapi.com
+   ```
+
+4. Inicia el proyecto:
+
+   ```bash
+   npm run dev
+   ```
+
+---
+
+## 🔐 Clerk
+
+El juego requiere login para la versión completa. Clerk se usa para:
+
+- Acceder al modo completo tras autenticación.
+- Registrar partidas ganadas/perdidas.
+- Proteger rutas y llamadas a la API interna.
+
+[Configura Clerk en Astro →](https://clerk.com/docs/quickstarts/astro)
+
+---
+
+## 📊 Ranking de jugadores
+
+Las estadísticas de jugadores (victorias y derrotas) se almacenan en un backend de Strapi. Para consultar el ranking, ve a:
+
+> [https://starshipchronicles.com/ranking](https://starshipchronicles.com/ranking)
+
+---
+
+## 📸 Capturas
+
+![Captura 1](https://github.com/user-attachments/assets/f9a2289c-8013-4fe8-a798-9836a877e98f)
+![Captura 2](https://github.com/user-attachments/assets/607d407c-c000-4945-8336-1e83b402498d)
+![Captura 3](https://github.com/user-attachments/assets/cbf1afc4-6092-49d0-959f-12d5746327f3)
+
+---
+
+## 👨‍🚀 Autor
+
+Desarrollado por [Daniel Villodres](https://d-v.es)  
+💬 Contacto en [@dvillodres_](https://x.com/dvillodres_)
+
+---
+
+Inspirado en el juego de cartas _New Frontier (2020)_ creado por Matthew Dunstan.
