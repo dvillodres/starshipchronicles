@@ -10,7 +10,7 @@
 
 **Starship Chronicle** es un juego web inspirado en el microjuego de cartas _New Frontier (2020)_, transformado en una experiencia digital narrativa. El jugador comanda una nave estelar a través de una galaxia generada proceduralmente, completando misiones, comerciando entre planetas, y tomando decisiones tácticas mientras compite contra un rival galáctico: **el Renegado**.
 
-Este proyecto fue desarrollado como parte de la [Hackathon de Midudev + Clerk (2024)](https://midudev.com), combinando autenticación, SSR y una estética retro inmersiva.
+Este proyecto fue desarrollado como parte de la [Hackathon de Midudev + Clerk (2025)](https://github.com/midudev/hackaton-clerk-2025/issues), combinando autenticación, SSR y una estética retro inmersiva.
 
 ---
 
