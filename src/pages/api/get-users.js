@@ -21,6 +21,7 @@ export async function GET({ url }) {
             {
                 headers: {
                     'Content-Type': 'application/json',
+                    "Cache-Control": "s-maxage=30, stale-while-revalidate=120",
                 },
             }
         );
