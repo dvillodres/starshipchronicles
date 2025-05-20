@@ -35,12 +35,12 @@ const rankingPot = await resPot.json()
             </div>
         </section>
 
-        <section class="mx-auto w-full bg-cover bg-fixed bg-center bg-no-repeat shadow-lg gap-4 flex items-center">
-            <div class="w-full md:w-1/2 h-[300px]">
+        <section class="mx-auto w-full bg-cover bg-fixed bg-center bg-no-repeat shadow-lg gap-4 flex flex-col md:flex-row items-center">
+            <div class="w-full md:w-1/2 md:h-[300px]">
                 <img src="/assets/img/top-victorias.webp">
             </div>
             <div style={`background-image:url('/assets/img/race.webp')`} class=" w-full md:w-1/2">
-                <div class="bg-emerald-950/70 h-[300px] overflow-y-scroll backdrop-blur-xs w-full flex justify-center items-center p-10  gap-4">
+                <div class="hide-scrollbar bg-emerald-950/70 h-[300px] overflow-y-scroll backdrop-blur-xs w-full flex justify-center items-center p-10  gap-4">
                     <table class="w-3/4 text-left border-collapse  mt-10 font-doto text-white/90">
                         <thead>
                         <tr class="border-b border-crt-green/40 text-sm text-crt-green uppercase">
@@ -66,12 +66,12 @@ const rankingPot = await resPot.json()
             </div>
         </section>
 
-        <section class="mx-auto w-full bg-cover bg-fixed bg-center bg-no-repeat shadow-lg gap-4 flex items-center">
-            <div class="w-full md:w-1/2 h-[300px]">
+        <section class="mx-auto w-full bg-cover bg-fixed bg-center bg-no-repeat shadow-lg gap-4 flex flex-col md:flex-row items-center">
+            <div class="w-full md:w-1/2 md:h-[300px]">
                 <img src="/assets/img/top-derrotas.webp">
             </div>
             <div style={`background-image:url('/assets/img/race.webp')`} class=" w-full md:w-1/2">
-                <div class="bg-red-950/70 h-[300px] overflow-y-scroll backdrop-blur-xs w-full flex justify-center items-center p-10  gap-4">
+                <div class="hide-scrollbar bg-red-950/70 h-[300px] overflow-y-scroll backdrop-blur-xs w-full flex justify-center items-center p-10  gap-4">
                     <table class="w-3/4 text-left border-collapse mt-10 font-doto text-white/90">
                         <thead>
                         <tr class="border-b border-crt-green/40 text-sm text-crt-green uppercase">
@@ -106,3 +106,13 @@ const rankingPot = await resPot.json()
         </div>
     </main>
 </Layout>
+
+
+
+<style>
+    .hide-scrollbar {
+        scrollbar-width: 0px;
+        scrollbar-color: transparent;
+    }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+</style>
