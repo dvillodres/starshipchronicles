@@ -27,7 +27,7 @@ import {SignedIn, SignedOut, SignInButton} from "@clerk/astro/components";
 
 			<!-- STEP 1 -->
 			<section class="flex flex-col md:flex-row items-center gap-12 text-right">
-				<img src="/assets/img/tutorial/scanner.webp" alt="Escáner galáctico" class="w-full md:w-1/2 rounded shadow-md mask-r-from-70% mask-r-to-100%" />
+				<img src="/assets/img/tutorial/scanner.webp" alt="Escáner galáctico" class="w-full md:w-1/2 rounded shadow-md md:mask-r-from-70% md:mask-r-to-100%" />
 				<div class="md:w-1/2 space-y-4">
 
 					<div class="flex items-center gap-3">
@@ -42,7 +42,7 @@ import {SignedIn, SignedOut, SignInButton} from "@clerk/astro/components";
 
 			<!-- STEP 2 -->
 			<section class="flex flex-col md:flex-row-reverse items-center gap-12">
-				<img loading="lazy" src="/assets/img/tutorial/events.webp" alt="Eventos de viaje" class="w-full md:w-1/2 rounded shadow-md mask-l-from-70% mask-l-to-100%" />
+				<img loading="lazy" src="/assets/img/tutorial/events.webp" alt="Eventos de viaje" class="w-full md:w-1/2 rounded shadow-md md:mask-l-from-70% md:mask-l-to-100%" />
 				<div class="md:w-1/2 space-y-4">
 					<div class="flex items-center gap-3 order">
 						<h2 class="text-xl md:text-2xl  text-crt-green">Viaja con riesgo calculado</h2>
@@ -56,7 +56,7 @@ import {SignedIn, SignedOut, SignInButton} from "@clerk/astro/components";
 
 			<!-- STEP 3 -->
 			<section class="flex flex-col md:flex-row items-center gap-12 text-right">
-				<img loading="lazy" src="/assets/img/tutorial/planet.webp" alt="Interacción en planetas" class="w-full md:w-1/2 rounded shadow-md  mask-r-from-70% mask-r-to-100%" />
+				<img loading="lazy" src="/assets/img/tutorial/planet.webp" alt="Interacción en planetas" class="w-full md:w-1/2 rounded shadow-md  md:mask-r-from-70% md:mask-r-to-100%" />
 				<div class="md:w-1/2 space-y-4">
 
 					<div class="flex items-center gap-3">
@@ -71,7 +71,7 @@ import {SignedIn, SignedOut, SignInButton} from "@clerk/astro/components";
 
 			<!-- STEP 4 -->
 			<section class="flex flex-col md:flex-row-reverse items-center gap-12">
-				<img loading="lazy" src="/assets/img/tutorial/missions.webp" alt="Misiones" class="w-full md:w-1/2 rounded shadow-md mask-l-from-70% mask-l-to-100%" />
+				<img loading="lazy" src="/assets/img/tutorial/missions.webp" alt="Misiones" class="w-full md:w-1/2 rounded shadow-md md:mask-l-from-70% md:mask-l-to-100%" />
 				<div class="md:w-1/2 space-y-4">
 
 					<div class="flex items-center gap-3">
@@ -86,7 +86,7 @@ import {SignedIn, SignedOut, SignInButton} from "@clerk/astro/components";
 
 			<!-- STEP 5 -->
 			<section class="flex flex-col md:flex-row items-center gap-12 text-right">
-				<img loading="lazy" src="/assets/img/tutorial/combats.webp" alt="Combate" class="w-full md:w-1/2 rounded shadow-md mask-r-from-70% mask-r-to-100%" />
+				<img loading="lazy" src="/assets/img/tutorial/combats.webp" alt="Combate" class="w-full md:w-1/2 rounded shadow-md md:mask-r-from-70% md:mask-r-to-100%" />
 				<div class="md:w-1/2 space-y-4">
 					<div class="flex items-center justify-end gap-3">
 						<img loading="lazy" class=" w-20 h-20 animate-[jiggle_2s_ease-in-out_infinite] planet" src="/assets/img/icons/planet-5.webp">
@@ -100,7 +100,7 @@ import {SignedIn, SignedOut, SignInButton} from "@clerk/astro/components";
 
 			<!-- STEP 6 -->
 			<section class="flex flex-col md:flex-row-reverse items-center gap-12">
-				<img loading="lazy" src="/assets/img/tutorial/victory.webp" alt="Victoria" class="w-full md:w-1/2 rounded shadow-md mask-l-from-70% mask-l-to-100%" />
+				<img loading="lazy" src="/assets/img/tutorial/victory.webp" alt="Victoria" class="w-full md:w-1/2 rounded shadow-md md:mask-l-from-70% md:mask-l-to-100%" />
 				<div class="md:w-1/2 space-y-4">
 
 					<div class="flex items-center gap-3">
@@ -236,15 +236,14 @@ import {SignedIn, SignedOut, SignInButton} from "@clerk/astro/components";
 
 	const path = {
 		path: [
-			{ x: -40, y: 0 },
-			{ x: 40, y: 120 },
-			{ x: -40, y: 240 },
-			{ x: 40, y: 360 },
-			{ x: -40, y: 480 },
-			{ x: 40, y: 600 },
-			{ x: -40, y: 680 },
+			{ x: -0, y: 0 },
+			{ x: 0, y: 120 },
+			{ x: -0, y: 240 },
+			{ x: 0, y: 360 },
+			{ x: -0, y: 480 },
+			{ x: 0, y: 600 },
+			{ x: -0, y: 680 },
 			{ x: 0, y: 780 },
-
 		],
 		curviness: 1.2
 	}
@@ -304,13 +303,13 @@ import {SignedIn, SignedOut, SignInButton} from "@clerk/astro/components";
 				autoRotate: false
 			},
 			keyframes: [
-				{ rotation: -15 },
-				{ rotation: 15 },
-				{ rotation: -15 },
-				{ rotation: 15 },
-				{ rotation: -15 },
-				{ rotation: 15 },
-				{ rotation: -15 }
+				{ rotation: -0 },
+				{ rotation: 0 },
+				{ rotation: -0 },
+				{ rotation: 0 },
+				{ rotation: -0 },
+				{ rotation: 0 },
+				{ rotation: -0 }
 			],
 			ease: "none",
 			scrollTrigger: {
