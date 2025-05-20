@@ -35,10 +35,7 @@
     <VictoryScreen/>
 {:else}
 
-    <div class="max-w-6xl mx-auto p-4 md:p-6 flex gap-6 flex-col font-retro">
-
-
-
+    <div class="max-w-6xl mx-auto p-4 md:p-6 flex gap-6 flex-col font-retro pt-12">
         {#if state.isDemo && state.demoTravelCount >= state.demoTravelLimit}
 
                 <div class="fixed inset-0  bg-black/90 text-crt-green flex items-center justify-center text-center z-50 p-6 font-doto">
@@ -134,11 +131,7 @@
         </div>
 
 
-        <a
-
-                href="/"
-                class=" blockbg-black/80 text-center p-2 border border-red-600 font-doto mt-2 text-red-600 underline text-xs hover:text-red-200 transition cursor-crosshair"
-        >
+        <a href="/" class=" blockbg-black/80 text-center p-2 border border-red-600 font-doto mt-2 text-red-600 underline text-xs hover:text-red-200 transition cursor-crosshair">
             Salir del juego
         </a>
 
