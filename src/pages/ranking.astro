@@ -34,35 +34,28 @@ const rankingPot = await resPot.json()
                 </SignedIn>
             </div>
         </section>
+        <!-- ... todo el resto del layout y fetch igual ... -->
 
         <section class="mx-auto w-full bg-cover bg-fixed bg-center bg-no-repeat shadow-lg gap-4 flex flex-col md:flex-row items-center">
             <div class="w-full md:w-1/2 md:h-[300px]">
                 <img src="/assets/img/top-victorias.webp">
             </div>
-            <div style={`background-image:url('/assets/img/race.webp')`} class=" w-full md:w-1/2">
-                <div class="hide-scrollbar bg-emerald-950/70 h-[300px] overflow-y-scroll backdrop-blur-xs w-full flex justify-center items-center p-10  gap-4">
-                    <table class="w-3/4 text-left border-collapse  mt-10 font-doto text-white/90">
-                        <thead>
-                        <tr class="border-b border-crt-green/40 text-sm text-crt-green uppercase">
-                            <th class="py-2">#</th>
-                            <th class="py-2">Comandante</th>
-                            <th class="py-2 text-center">Victorias</th>
-                            <th class="py-2 text-center">Derrotas</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {rankingTop.map((user, i) => (
-                                <tr class="border-b border-white/10 hover:bg-white/5 transition">
-                                    <td class="py-2 px-2">{i + 1}</td>
-                                    <td class="py-2 px-2">{user.username}</td>
-                                    <td class="py-2 px-2 text-center text-crt-green">{user.wins ?? 0}</td>
-                                    <td class="py-2 px-2 text-center text-red-400">{user.losses ?? 0}</td>
-                                </tr>
-                        ))}
-                        </tbody>
-                    </table>
+            <div style={`background-image:url('/assets/img/race.webp')`} class="w-full md:w-1/2">
+                <div class="hide-scrollbar bg-emerald-950/70 h-[300px] overflow-y-scroll backdrop-blur-xs w-full flex flex-col items-center p-6 gap-4 font-doto text-white/90">
+                    <div class="w-full max-w-md">
+                        <div class="text-crt-green text-sm uppercase border-b border-crt-green/40 pb-2 mb-2">Top Comandantes</div>
+                        <ul class="space-y-3">
+                            {rankingTop.map((user, i) => (
+                                    <li class="flex justify-between items-center border-b border-white/10 pb-2 hover:bg-white/5 px-2 py-1 rounded transition">
+                                        <span class="w-6 text-crt-green text-sm">{i + 1}</span>
+                                        <span class="flex-1 ml-2">{user.username}</span>
+                                        <span class="text-crt-green text-center w-12">{user.wins ?? 0}</span>
+                                        <span class="text-red-400 text-center w-12">{user.losses ?? 0}</span>
+                                    </li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
-
             </div>
         </section>
 
@@ -70,32 +63,25 @@ const rankingPot = await resPot.json()
             <div class="w-full md:w-1/2 md:h-[300px]">
                 <img src="/assets/img/top-derrotas.webp">
             </div>
-            <div style={`background-image:url('/assets/img/race.webp')`} class=" w-full md:w-1/2">
-                <div class="hide-scrollbar bg-red-950/70 h-[300px] overflow-y-scroll backdrop-blur-xs w-full flex justify-center items-center p-10  gap-4">
-                    <table class="w-3/4 text-left border-collapse mt-10 font-doto text-white/90">
-                        <thead>
-                        <tr class="border-b border-crt-green/40 text-sm text-crt-green uppercase">
-                            <th class="py-2">#</th>
-                            <th class="py-2">Comandante</th>
-                            <th class="py-2 text-center">Victorias</th>
-                            <th class="py-2 text-center">Derrotas</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {rankingPot.map((user, i) => (
-                                <tr class="border-b border-white/10 hover:bg-white/5 transition">
-                                    <td class="py-2 px-2">{i + 1}</td>
-                                    <td class="py-2 px-2">{user.username}</td>
-                                    <td class="py-2 px-2 text-center text-crt-green">{user.wins ?? 0}</td>
-                                    <td class="py-2 px-2 text-center text-red-400">{user.losses ?? 0}</td>
-                                </tr>
-                        ))}
-                        </tbody>
-                    </table>
+            <div style={`background-image:url('/assets/img/race.webp')`} class="w-full md:w-1/2">
+                <div class="hide-scrollbar bg-red-950/70 h-[300px] overflow-y-scroll backdrop-blur-xs w-full flex flex-col items-center p-6 gap-4 font-doto text-white/90">
+                    <div class="w-full max-w-md">
+                        <div class="text-crt-green text-sm uppercase border-b border-crt-green/40 pb-2 mb-2">Más Derrotas</div>
+                        <ul class="space-y-3">
+                            {rankingPot.map((user, i) => (
+                                    <li class="flex justify-between items-center border-b border-white/10 pb-2 hover:bg-white/5 px-2 py-1 rounded transition">
+                                        <span class="w-6 text-crt-green text-sm">{i + 1}</span>
+                                        <span class="flex-1 ml-2">{user.username}</span>
+                                        <span class="text-crt-green text-center w-12">{user.wins ?? 0}</span>
+                                        <span class="text-red-400 text-center w-12">{user.losses ?? 0}</span>
+                                    </li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
-
             </div>
         </section>
+
         <div class="text-center pb-10">
             <a
                     href="/"

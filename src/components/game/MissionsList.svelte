@@ -11,8 +11,8 @@
         {#if currentMission }
             <p class="font-doto text-sm bg-red-700 p-2 text-center mb-3">Si aceptas misiones teniendo una activa perderás fama.</p>
         {/if}
-        <div class="overflow-x-auto  hide-scrollbar mb-4">
-            <ul class="flex no-scrollbar gap-4 px-1">
+        <div class="overflow-x-auto w-full mb-4">
+            <ul class="flex gap-4 px-1">
                 {#each availableMissions as m}
                     <li class="flex-shrink-0 w-3/4 sm:w-80 bg-nebula-black border border-cosmic-purple/50 p-4 font-doto">
                         <strong class="block text-white mb-2">{m.name}</strong>
@@ -35,10 +35,3 @@
     {/if}
 </div>
 
-<style>
-    .hide-scrollbar {
-        scrollbar-width: 0px;
-        scrollbar-color: transparent;
-    }
-    .hide-scrollbar::-webkit-scrollbar { display: none; }
-</style>
