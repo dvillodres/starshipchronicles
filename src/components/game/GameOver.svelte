@@ -2,7 +2,7 @@
     import { gameStore } from '../../stores/gameStore.js';
     import {onMount} from "svelte";
 
-    async function increaseVictory() {
+    async function increaseLosses() {
         await fetch('/api/increase-losses', {
             method: 'POST',
             headers: {
@@ -12,7 +12,7 @@
     }
 
     onMount(async () => {
-        await increaseVictory();
+        await increaseLosses();
     })
 </script>
 

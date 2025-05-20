@@ -127,7 +127,7 @@ function createGameStore() {
 
             const cost = state.currentEnemy.fleeCost;
             if (cost?.hull) {
-                state.hull -= cost.hull;
+                state.hull = Math.max(0, state.hull - cost.hull);
                 logMessage(state, `[HUIDA] Escapas, pero pierdes ${cost.hull} Hull.`);
             }
 
@@ -258,7 +258,7 @@ function createGameStore() {
             switch (event.type) {
                 case 'environment':
                     if (event.effect === 'damage') {
-                        state.hull -= event.amount;
+                        state.hull =  Math.max(0, state.hull - event.amount);
                         if (state.hull <= 0) {
                             logMessage(state, '[GAME OVER] La nave fue destruida durante el viaje.');
                             state.gameOver = true;

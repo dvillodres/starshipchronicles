@@ -18,6 +18,7 @@
     "@midudev/tailwind-animations": "^0.2.0",
     "@tailwindcss/vite": "^4.1.5",
     "astro": "^5.7.11",
+    "gsap": "^3.13.0",
     "svelte": "^5.28.2",
     "tailwindcss": "^4.1.5",
     "typescript": "^5.8.3"

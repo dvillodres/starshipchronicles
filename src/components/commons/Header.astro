@@ -1,7 +1,7 @@
 ---
 import {UserButton} from "@clerk/astro/components";
 ---
-<div class="fixed top-0 left-0 z-50 font-doto p-2 w-full flex justify-between items-center bg-emerald-950">
+<div class="fixed top-0 left-0 z-50 font-doto p-2 w-full flex flex-col md:flex-row justify-between items-center bg-emerald-950">
     <div class="flex gap-2 items-center">
         <a href="/"><img alt="Logo Starship Chronicles" class="w-8 h-8" src="/assets/img/logo.webp"></a>
 
@@ -12,6 +12,7 @@ import {UserButton} from "@clerk/astro/components";
         <a href="/">Inicio</a>
         <a href="/tutorial">Tutorial</a>
         <a href="/juego">Jugar</a>
+        <a href="/ranking">Ranking</a>
         <UserButton />
     </div>
 </div>

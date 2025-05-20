@@ -1,9 +1,4 @@
-export async function GET({ url, locals }) {
-    const { userId } = locals.auth();
-
-    if (!userId) {
-        return new Response('Unauthorized', { status: 401 });
-    }
+export async function GET({ url }) {
 
     const STRAPI_API_URL = import.meta.env.VITE_STRAPI_API_URL;
 
