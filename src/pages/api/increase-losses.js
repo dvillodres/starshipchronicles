@@ -12,7 +12,10 @@ export async function POST({ locals }) {
         return new Response('Unauthorized', { status: 401 });
     }
 
-    const STRAPI_API_URL = import.meta.env.VITE_STRAPI_API_URL;
+    return new Response('Success', { status: 201 });
+
+
+    /*const STRAPI_API_URL = import.meta.env.VITE_STRAPI_API_URL;
 
     if (!STRAPI_API_URL) {
         console.error('❌ STRAPI_API_URL no está definida. Verifica tu .env');
@@ -86,5 +89,5 @@ export async function POST({ locals }) {
     } catch (err) {
         console.error('❌ Error general en POST /api/increase-victory:', err);
         return new Response('Server Error', { status: 500 });
-    }
+    }*/
 }
